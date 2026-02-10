@@ -1,0 +1,32 @@
+<view class="container safe-nav-space min-h-screen">
+  <view class="fade-in-up">
+    <text class="text-xl font-serif">Let's Talk.</text>
+    <text class="text-sub text-sm block mt-2">Tell us your story.</text>
+  </view>
+
+  <form bindsubmit="submit" class="form-area fade-in-up delay-1">
+    <view class="input-group">
+      <text class="label">NAME</text>
+      <input class="input-line" name="name" placeholder="Your Name" placeholder-class="ph-style"/>
+    </view>
+    <view class="input-group">
+      <text class="label">PHONE</text>
+      <input class="input-line" name="phone" type="number" placeholder="Mobile Number" placeholder-class="ph-style"/>
+    </view>
+    <view class="input-group">
+      <text class="label">INTEREST</text>
+      <picker bindchange="pick" value="{{idx}}" range="{{types}}">
+        <view class="input-line picker-view">
+          <text class="{{idx!=-1?'text-main':'text-sub'}}">{{idx!=-1?types[idx]:'Select Type'}}</text>
+          <text class="text-xs">▼</text>
+        </view>
+      </picker>
+    </view>
+    
+    <button form-type="submit" class="btn-primary" style="width:100%">SUBMIT REQUEST</button>
+  </form>
+
+  <view class="footer-chat fade-in-up delay-2">
+    <button open-type="contact" class="btn-chat">Or chat via WeChat</button>
+  </view>
+</view>

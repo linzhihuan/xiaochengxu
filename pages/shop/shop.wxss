@@ -1,0 +1,21 @@
+.shop-header { margin-bottom: 60rpx; }
+.shop-title { font-size: 50rpx; display: block; margin-bottom: 10rpx; }
+.shop-desc { font-size: 24rpx; color: #888; }
+
+.shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30rpx; }
+.shop-item { background: #f9f9f9; border-radius: 30rpx; padding: 40rpx 30rpx; display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 380rpx; }
+.shop-img-box { width: 100%; height: 200rpx; display: flex; align-items: center; justify-content: center; }
+.shop-img { width: 160rpx; height: 160rpx; border-radius: 12rpx; box-shadow: 0 10rpx 20rpx rgba(0,0,0,0.05); }
+.rotate-right { transform: rotate(5deg); }
+.rotate-left { transform: rotate(-5deg); }
+
+.shop-txt { text-align: center; margin-top: 20rpx; }
+.p-name { font-size: 28rpx; font-weight: bold; display: block; }
+.p-sub { font-size: 22rpx; color: #999; margin-top: 6rpx; display: block; }
+
+/* 宽卡片样式 */
+.shop-item.wide { grid-column: span 2; height: auto; align-items: flex-start; text-align: left; }
+.shop-content-row { display: flex; width: 100%; justify-content: space-between; align-items: center; }
+.p-name.big { font-size: 36rpx; }
+.tag { font-size: 20rpx; border: 1px solid #000; border-radius: 100rpx; padding: 6rpx 20rpx; display: inline-block; margin-top: 20rpx; }
+.shop-img-big { width: 200rpx; height: 200rpx; border-radius: 12rpx; box-shadow: 0 10rpx 30rpx rgba(0,0,0,0.08); }

@@ -1,0 +1,38 @@
+<view class="container safe-nav-space safe-bottom">
+  <view class="user-header fade-in-up">
+    <view class="avatar-box" bindtap="handleAuth">
+      <image wx:if="{{isLogin}}" src="/images/default-avatar.png" class="avatar"></image> 
+      <view wx:else class="avatar-placeholder">Login</view>
+    </view>
+    <view class="user-info" bindtap="handleAuth">
+      <text class="nickname font-serif">{{isLogin ? 'WeChat User' : 'Guest'}}</text>
+      <text class="user-desc">{{isLogin ? 'Welcome back.' : 'Tap to sync your gallery.'}}</text>
+    </view>
+  </view>
+
+  <view class="section-header fade-in-up delay-1">
+    <text class="section-title">MY COLLECTION</text>
+    <view class="line"></view>
+  </view>
+
+  <view wx:if="{{isLogin && favorites.length === 0}}" class="empty-state fade-in-up delay-2">
+    <text>No collections yet.</text>
+    <button class="btn-ghost mt-4" bindtap="goExplore">Explore Now</button>
+  </view>
+
+  <view wx:if="{{!isLogin}}" class="empty-state fade-in-up delay-2">
+    <text>Please login to view collections.</text>
+  </view>
+
+  <view class="fav-grid fade-in-up delay-2" wx:if="{{isLogin && favorites.length > 0}}">
+    <block wx:for="{{favorites}}" wx:key="id">
+      <view class="fav-item" bindtap="goDetail" data-item="{{item}}">
+        <image src="{{item.img}}" mode="aspectFill" class="fav-img"></image>
+        <view class="fav-meta">
+          <text class="fav-tag">{{item.tag}}</text>
+          <text class="fav-title">{{item.title}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

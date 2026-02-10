@@ -1,0 +1,54 @@
+<view class="detail-container">
+  <view class="nav-bar" style="top:{{statusBarHeight}}px">
+    <view class="back-btn" bindtap="goBack">
+      <text class="back-arrow">←</text>
+    </view>
+  </view>
+
+  <image src="{{info.img}}" mode="aspectFill" class="hero-img fade-in-up"></image>
+
+  <view class="content-card fade-in-up delay-1">
+    <view class="card-handle"></view>
+    <view class="meta-area">
+      <text class="tag">{{info.tag}}</text>
+      <text class="title font-serif">{{info.title}}</text>
+      <view class="divider"></view>
+    </view>
+
+    <text class="description">
+      捕捉光影的细微之处，记录真实的情感流动。每一个快门都是对当下的致敬。这组作品采用了自然光拍摄，旨在还原最纯粹的肤色与质感。
+    </text>
+
+    <view class="gallery-grid">
+      <block wx:for="{{gallery}}" wx:key="*this">
+        <image src="{{item}}" mode="widthFix" class="gallery-item fade-in-up" bindtap="preview" data-url="{{item}}"></image>
+      </block>
+    </view>
+
+    <view class="footer-spacer"></view>
+  </view>
+
+  <view class="action-bar safe-bottom fade-in-up delay-2">
+    <button open-type="contact" class="icon-btn">
+      <text class="icon-emoji">💬</text>
+      <text class="icon-label">咨询</text>
+    </button>
+    <button open-type="share" class="icon-btn" style="background:transparent;">
+      <text class="icon-emoji">📤</text>
+      <text class="icon-label">Share</text>
+    </button>
+    <!-- <view class="vline"></view> -->
+    <!-- <view class="book-btn" bindtap="goBooking">
+      <text>立即预约同款</text>
+    </view> -->
+    <!-- <view class="vline"></view> -->
+    <view class="icon-btn" bindtap="toggleFavorite">
+      <text class="icon-emoji" style="color: {{isFavorite ? '#ff4d4f' : '#ffffff'}};">{{isFavorite ? '♥' : '♡'}}</text>
+      <text class="icon-label">{{isFavorite ? 'Saved' : 'Save'}}</text>
+    </view>
+    <!-- <view class="vline"></view> -->
+    <view class="book-btn" bindtap="goBooking">
+      <text>BOOK NOW</text>
+    </view>
+  </view>
+</view>

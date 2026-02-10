@@ -1,0 +1,173 @@
+/* pages/detail/detail.wxss */
+page {
+  background-color: #f8f8f8; /* 浅灰底色，凸显白色卡片 */
+  font-family: 'Times New Roman', serif; /* 强调衬线体的高级感 */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 65vh; /* 占据大半个屏幕 */
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-mask {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0));
+}
+
+/* --- Content Card --- */
+.content-card {
+  position: relative;
+  margin-top: -60rpx; /* 向上覆盖 */
+  background: #ffffff;
+  border-radius: 40rpx 40rpx 0 0;
+  padding: 50rpx 40rpx;
+  min-height: 50vh;
+  box-shadow: 0 -10rpx 30rpx rgba(0,0,0,0.03);
+  z-index: 10;
+}
+
+.card-handle {
+  width: 60rpx; height: 8rpx;
+  background: #e0e0e0;
+  border-radius: 4rpx;
+  margin: 0 auto 40rpx;
+}
+
+.header-group { text-align: center; }
+.tag { 
+  display: block; 
+  font-size: 20rpx; 
+  letter-spacing: 4rpx; 
+  color: #999; 
+  margin-bottom: 16rpx;
+  text-transform: uppercase;
+}
+.title {
+  display: block;
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.divider {
+  width: 40rpx; height: 2rpx; background: #000;
+  margin: 40rpx auto;
+}
+
+.description {
+  font-size: 28rpx;
+  color: #555;
+  line-height: 1.8;
+  text-align: justify;
+  font-family: sans-serif; /* 正文用无衬线体易读 */
+  margin-bottom: 60rpx;
+  display: block;
+}
+
+/* --- Gallery --- */
+.gallery-title {
+  font-size: 24rpx; font-weight: bold; letter-spacing: 2rpx;
+  margin-bottom: 30rpx; border-left: 6rpx solid #000; padding-left: 20rpx;
+}
+
+.gallery-grid {
+  column-count: 2; column-gap: 20rpx;
+}
+.gallery-item {
+  width: 100%; border-radius: 8rpx; margin-bottom: 20rpx;
+  break-inside: avoid;
+}
+
+.footer-spacer { height: 200rpx; } /* 为悬浮栏留出空间 */
+
+/* --- Floating Bar (核心修改) --- */
+.floating-bar {
+  position: fixed;
+  bottom: 50rpx; /* 距离底部悬浮 */
+  left: 5%;      /* 居中 */
+  width: 90%;    /* 不占满全屏，显得轻盈 */
+  height: 110rpx;
+  background: rgba(20, 20, 20, 0.95); /* 深色磨砂背景 */
+  backdrop-filter: blur(10px);
+  border-radius: 100rpx; /* 胶囊形状 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10rpx;
+  box-shadow: 0 15rpx 30rpx rgba(0,0,0,0.25);
+  z-index: 100;
+  padding-bottom: env(safe-area-inset-bottom); /* 适配 iPhone X */
+}
+
+.action-group {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: space-around;
+  padding-left: 10rpx;
+}
+
+/* 重置 Button 默认样式 */
+.icon-btn {
+  background: transparent;
+  padding: 0; margin: 0;
+  width: 100rpx;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icon-btn::after { border: none; } /* 去除微信边框 */
+
+.icon-symbol {
+  font-size: 38rpx;
+  color: #fff;
+  margin-bottom: 6rpx;
+  transition: transform 0.2s;
+}
+.active-heart { color: #ff4d4f; transform: scale(1.1); }
+
+.icon-label {
+  font-size: 18rpx;
+  color: #aaa;
+  font-family: sans-serif;
+}
+
+/* 右侧预约按钮 */
+.book-btn {
+  background: #fff;
+  color: #000;
+  height: 86rpx;
+  padding: 0 40rpx;
+  border-radius: 43rpx; /* 圆角半高 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-right: 12rpx;
+  box-shadow: 0 4rpx 10rpx rgba(255,255,255,0.1);
+}
+.btn-arrow { margin-left: 10rpx; font-weight: normal; }
+
+/* 简单的入场动画 */
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  opacity: 0; transform: translateY(20rpx);
+}
+.delay-2 { animation-delay: 0.2s; }
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}

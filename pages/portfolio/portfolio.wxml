@@ -1,0 +1,39 @@
+<view class="page-bg">
+  <view class="sticky-header">
+    <view class="header-title-area">
+      <text class="header-title font-serif">Gallery.</text>
+      <text class="header-sub">SELECTED WORKS</text>
+    </view>
+    <scroll-view scroll-x class="tab-scroll" show-scrollbar="{{false}}">
+      <view class="tab-item {{activeTab==='all'?'active':''}}" bindtap="switchTab" data-type="all">All</view>
+      <view class="tab-item {{activeTab==='portrait'?'active':''}}" bindtap="switchTab" data-type="portrait">Portrait</view>
+      <view class="tab-item {{activeTab==='commercial'?'active':''}}" bindtap="switchTab" data-type="commercial">Editorial</view>
+      <view class="tab-item {{activeTab==='memory'?'active':''}}" bindtap="switchTab" data-type="memory">Life</view>
+    </scroll-view>
+  </view>
+
+  <view class="masonry-container">
+    <view class="masonry-col">
+      <block wx:for="{{leftList}}" wx:key="id">
+        <view class="work-card fade-in-up" bindtap="goDetail" data-item="{{item}}">
+          <image src="{{item.img}}" mode="widthFix" class="work-img" lazy-load></image>
+          <view class="work-info">
+            <text class="work-tag">{{item.tag}}</text>
+            <text class="work-title">{{item.title}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="masonry-col">
+      <block wx:for="{{rightList}}" wx:key="id">
+        <view class="work-card fade-in-up" bindtap="goDetail" data-item="{{item}}">
+          <image src="{{item.img}}" mode="widthFix" class="work-img" lazy-load></image>
+          <view class="work-info">
+            <text class="work-tag">{{item.tag}}</text>
+            <text class="work-title">{{item.title}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

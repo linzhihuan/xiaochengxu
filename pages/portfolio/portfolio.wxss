@@ -1,0 +1,22 @@
+.page-bg { min-height: 100vh; background: #fff; }
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.95);
+  z-index: 50;
+  padding: 120rpx 40rpx 20rpx 40rpx;
+}
+.header-title-area { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30rpx; }
+.header-title { font-size: 60rpx; color: #000; }
+.header-sub { font-size: 20rpx; color: #999; letter-spacing: 2rpx; margin-bottom: 14rpx; }
+
+.tab-scroll { white-space: nowrap; width: 100%; }
+.tab-item { display: inline-block; margin-right: 50rpx; color: #999; padding-bottom: 10rpx; font-size: 28rpx; transition: all 0.3s; }
+.tab-item.active { color: #000; border-bottom: 2px solid #000; font-weight: 500; }
+
+.masonry-container { display: flex; justify-content: space-between; padding: 20rpx 30rpx; }
+.masonry-col { width: 48%; display: flex; flex-direction: column; gap: 40rpx; }
+.work-card { width: 100%; margin-bottom: 10rpx; }
+.work-img { width: 100%; border-radius: 20rpx; margin-bottom: 20rpx; display: block; box-shadow: 0 4rpx 10rpx rgba(0,0,0,0.02); }
+.work-tag { font-size: 20rpx; color: #999; letter-spacing: 2rpx; text-transform: uppercase; display: block; margin-bottom: 6rpx; }
+.work-title { font-size: 28rpx; color: #333; font-weight: 500; }

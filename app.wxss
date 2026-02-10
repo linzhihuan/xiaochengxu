@@ -1,0 +1,87 @@
+/* app.wxss */
+page {
+  --bg-white: #ffffff;
+  --bg-gray: #f9f9f9;
+  --text-main: #111111;
+  --text-sub: #8c8c8c;
+  --brand-black: #000000;
+  
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
+  background-color: var(--bg-white);
+  color: var(--text-main);
+  box-sizing: border-box;
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+
+/* 通用容器 */
+.container {
+  padding: 0 40rpx;
+}
+
+/* 顶部避让 (适配刘海屏) */
+.safe-nav-space {
+  padding-top: 180rpx;
+}
+
+/* 底部避让 */
+.safe-bottom {
+  padding-bottom: calc(40rpx + env(safe-area-inset-bottom));
+}
+
+/* 进场动画：上浮淡入 */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30rpx);
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 按钮样式 */
+.btn-primary {
+  background-color: var(--brand-black);
+  color: #fff;
+  border-radius: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24rpx 0;
+  font-size: 26rpx;
+  font-weight: 500;
+  letter-spacing: 2rpx;
+  transition: opacity 0.2s;
+}
+.btn-primary:active { opacity: 0.8; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--brand-black);
+  border: 1px solid #e0e0e0;
+  border-radius: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24rpx 0;
+  font-size: 26rpx;
+}
+
+/* 字体工具 */
+.font-serif { font-family: 'Times New Roman', serif; font-weight: bold; }
+.text-xs { font-size: 22rpx; }
+.text-sm { font-size: 26rpx; }
+.text-lg { font-size: 34rpx; }
+.text-xl { font-size: 40rpx; }
+.text-xxl { font-size: 64rpx; line-height: 1.1; }
+.text-sub { color: var(--text-sub); }
+.uppercase { text-transform: uppercase; letter-spacing: 2rpx; }
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar { display: none; width: 0; height: 0; color: transparent; }

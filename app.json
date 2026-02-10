@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/portfolio/portfolio",
+    "pages/shop/shop",
+    "pages/contact/contact",
+    "pages/detail/detail",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "IN THE MOMENT",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "MOMENT",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "pagePath": "pages/portfolio/portfolio",
+        "text": "GALLERY",
+        "iconPath": "images/gallery.png",
+        "selectedIconPath": "images/gallery.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "LAB",
+        "iconPath": "images/ecology.png",
+        "selectedIconPath": "images/ecology.png"
+      },
+      {
+        "pagePath": "pages/contact/contact",
+        "text": "BOOK",
+        "iconPath": "images/order.png",
+        "selectedIconPath": "images/order.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "MY",
+        "iconPath": "images/user.png", 
+        "selectedIconPath": "images/user.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

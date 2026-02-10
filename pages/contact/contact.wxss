@@ -1,0 +1,10 @@
+.min-h-screen { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; }
+.form-area { margin-top: 80rpx; display: block; }
+.input-group { margin-bottom: 60rpx; }
+.label { font-size: 22rpx; font-weight: bold; color: #ccc; letter-spacing: 2rpx; margin-bottom: 20rpx; display: block; }
+.input-line { border-bottom: 1px solid #eee; padding: 20rpx 0; font-size: 32rpx; color: #000; height: 80rpx; }
+.ph-style { color: #eee; }
+.picker-view { display: flex; justify-content: space-between; align-items: center; }
+.footer-chat { text-align: center; margin-top: 60rpx; }
+.btn-chat { background: transparent; font-size: 24rpx; color: #999; border: none; }
+.btn-chat::after { border: none; }
