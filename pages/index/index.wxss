@@ -40,7 +40,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   padding: 0 50rpx 150rpx 50rpx; 
   z-index: 20;
 }
