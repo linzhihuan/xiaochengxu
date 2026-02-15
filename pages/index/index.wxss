@@ -33,15 +33,15 @@
   align-items: center;
   z-index: 10;
 }
-.logo { font-size: 40rpx; font-weight: bold; letter-spacing: 4rpx; font-family: 'Times New Roman', serif; }
+.logo { font-size: 40rpx; color: #b0b0b0; font-weight: bold; letter-spacing: 4rpx; font-family:'Helvetica', Courier, monospace, serif; }
 .year { font-size: 20rpx; color: #999; letter-spacing: 2rpx; }
 
 .content-box {
   position: absolute;
-  bottom: 0;
+  bottom: -70rpx;
   left: 0;
   width: 90%;
-  padding: 0 50rpx 150rpx 50rpx; 
+  padding: 0 50rpx 150rpx 45rpx; 
   z-index: 20;
 }
 .divider { width: 60rpx; height: 4rpx; background: #000; margin: 40rpx 0; }

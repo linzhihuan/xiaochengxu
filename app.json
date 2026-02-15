@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/portfolio/portfolio",
     "pages/shop/shop",
+    "pages/shop/customize/customize",
     "pages/contact/contact",
     "pages/detail/detail",
     "pages/mine/mine"
@@ -28,25 +29,25 @@
       },
       {
         "pagePath": "pages/portfolio/portfolio",
-        "text": "GALLERY",
+        "text": "场景画廊",
         "iconPath": "images/gallery.png",
         "selectedIconPath": "images/gallery.png"
       },
       {
         "pagePath": "pages/shop/shop",
-        "text": "LAB",
+        "text": "更多服务",
         "iconPath": "images/ecology.png",
         "selectedIconPath": "images/ecology.png"
       },
       {
         "pagePath": "pages/contact/contact",
-        "text": "BOOK",
+        "text": "联系我们",
         "iconPath": "images/order.png",
         "selectedIconPath": "images/order.png"
       },
       {
         "pagePath": "pages/mine/mine",
-        "text": "MY",
+        "text": "我的",
         "iconPath": "images/user.png", 
         "selectedIconPath": "images/user.png"
       }

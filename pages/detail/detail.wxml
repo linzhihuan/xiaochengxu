@@ -10,7 +10,7 @@
         <text class="title">{{info.title}}</text>
       </view>
       <view class="desc">
-        捕捉光影的细微之处，记录真实的情感流动。每一个快门都是对当下的致敬。
+        {{info.des}}
       </view>
       
       <view class="gallery">
@@ -25,19 +25,20 @@
     <view class="left-actions">
       <button class="c-btn" open-type="contact">
         <text class="c-icon">💬</text>
-        <text class="c-txt">Ask</text>
+        <text class="c-txt">咨询客服</text>
       </button>
       <button class="c-btn" open-type="share">
         <text class="c-icon">📤</text>
-        <text class="c-txt">Share</text>
+        <text class="c-txt">分享好友</text>
       </button>
+   
       <view class="c-btn" bindtap="toggleFavorite">
         <text class="c-icon {{isFavorite ? 'active' : ''}}">{{isFavorite ? '♥' : '♡'}}</text>
-        <text style="margin-top: -10rpx;" class="c-txt">Save</text>
+        <text style="margin-top: -10rpx;" class="c-txt">收藏</text>
       </view>
     </view>
     <view class="right-action" bindtap="goBooking">
-      BOOK NOW
+       HOME · BOOK
     </view>
   </view>
 </view>

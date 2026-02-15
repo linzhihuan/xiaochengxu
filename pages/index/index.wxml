@@ -1,6 +1,6 @@
 <view class="hero-container">
   <image 
-    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+    src="https://2026-1312809563.cos.ap-shanghai.myqcloud.com/home/moon.jpg" 
     mode="aspectFill" 
     class="hero-bg fade-in-up"
   ></image>
@@ -8,25 +8,28 @@
   <view class="hero-overlay"></view>
 
   <view class="top-bar fade-in-up">
-    <text class="logo">ITM.</text>
+    <text class="logo" style="color: rgb(188, 188, 188);">ITM.</text>
     <text class="year">EST. 2026</text>
   </view>
 
-  <view class="content-box safe-bottom">
+  <view class="content-box">
     <view class="text-group">
-      <view class="text-xxl fade-in-up delay-1">Capturing</view>
+      <view class="text-xxl fade-in-up delay-1" style="color:rgb(0, 0, 0)">Capturing</view>
       <view class="text-xxl font-serif fade-in-up delay-1" style="margin-top: -10rpx;">The Soul.</view>
       <view class="divider fade-in-up delay-2"></view>
-      <text class="desc fade-in-up delay-2">拒绝流水线式的记录。\n我们是光影的捕手，为你定格不可复制的瞬间。</text>
+      <text class="desc fade-in-up delay-2">In The Moment 拒绝流水线式的记录。\n我们是光影的捕手，为你定格不可复制的瞬间。</text>
     </view>
     
     <view class="btn-group fade-in-up delay-3">
-      <view class="btn-primary btn-expand" bindtap="goToPortfolio">EXPLORE</view>
+      <view class="btn-primary btn-expand" bindtap="goToPortfolio">EXPLORE · 探索</view>
       <view class="btn-ghost btn-icon" bindtap="goToContact">→</view>
     </view>
     <view class="icp-area fade-in-up delay-3">
       <text class="icp-text">Copyright © 2026 IN THE MOMENT Studio.</text>
-      <text class="icp-text"><a data-v-da9ae404="" href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2026014773号-2X</a></text>
+      <text class="icp-text">
+        <!-- <a href="https://beian.miit.gov.cn/" target="_blank"></a> -->
+        粤ICP备2026014773号-2X
+      </text>
     </view>
   </view>
   

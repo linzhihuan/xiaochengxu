@@ -55,7 +55,7 @@ Page({
   goDetail(e) {
     const item = e.currentTarget.dataset.item;
     wx.navigateTo({
-      url: `/pages/detail/detail?title=${item.title}&tag=${item.tag}&img=${encodeURIComponent(item.img)}`
+      url: `/pages/detail/detail?workId=${item.workId}&title=${item.title}&tag=${item.tag}&img=${encodeURIComponent(item.img)}&des=${item.des}`
     });
   },
 

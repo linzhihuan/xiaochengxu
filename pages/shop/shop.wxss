@@ -1,21 +1,136 @@
-.shop-header { margin-bottom: 60rpx; }
-.shop-title { font-size: 50rpx; display: block; margin-bottom: 10rpx; }
-.shop-desc { font-size: 24rpx; color: #888; }
+/* 使用 Flex 布局实现 Header 固定，Body 滚动 */
+page {
+  height: 100%;
+  overflow: hidden;
+  background: #f5f5f7;
+}
 
-.shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30rpx; }
-.shop-item { background: #f9f9f9; border-radius: 30rpx; padding: 40rpx 30rpx; display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 380rpx; }
-.shop-img-box { width: 100%; height: 200rpx; display: flex; align-items: center; justify-content: center; }
-.shop-img { width: 160rpx; height: 160rpx; border-radius: 12rpx; box-shadow: 0 10rpx 20rpx rgba(0,0,0,0.05); }
-.rotate-right { transform: rotate(5deg); }
-.rotate-left { transform: rotate(-5deg); }
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 30rpx;
+}
 
-.shop-txt { text-align: center; margin-top: 20rpx; }
-.p-name { font-size: 28rpx; font-weight: bold; display: block; }
-.p-sub { font-size: 22rpx; color: #999; margin-top: 6rpx; display: block; }
+.nav-header {
+  background: #f5f5f7;
+  padding: 20rpx 0rpx 40rpx;
 
-/* 宽卡片样式 */
-.shop-item.wide { grid-column: span 2; height: auto; align-items: flex-start; text-align: left; }
-.shop-content-row { display: flex; width: 100%; justify-content: space-between; align-items: center; }
-.p-name.big { font-size: 36rpx; }
-.tag { font-size: 20rpx; border: 1px solid #000; border-radius: 100rpx; padding: 6rpx 20rpx; display: inline-block; margin-top: 20rpx; }
-.shop-img-big { width: 200rpx; height: 200rpx; border-radius: 12rpx; box-shadow: 0 10rpx 30rpx rgba(0,0,0,0.08); }
+  flex-shrink: 0;
+  /* 禁止压缩 */
+  z-index: 10;
+}
+
+.nav-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  display: block;
+  color: #1d1d1f;
+  margin-top: 45rpx;
+}
+
+.nav-subtitle {
+  font-size: 24rpx;
+  color: #86868b;
+  letter-spacing: 1px;
+  margin-top: 5rpx;
+  display: block;
+}
+
+.shop-scroll {
+  flex: 1;
+  /* 占据剩余空间 */
+  overflow-y: auto;
+}
+
+.product-grid {
+  padding: 0 0rpx;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30rpx;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 32rpx;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s;
+}
+
+.product-card:active {
+  transform: scale(0.98);
+}
+
+.card-img-box {
+  width: 100%;
+  height: 240rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+}
+
+.badge {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  background: #000;
+  color: #fff;
+  font-size: 18rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 10rpx;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.p-name {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 4rpx;
+}
+
+.p-desc {
+  font-size: 20rpx;
+  color: #86868b;
+  line-height: 1.4;
+  margin-bottom: 20rpx;
+  min-height: 56rpx;
+}
+
+.p-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p-price {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.btn-arrow {
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20rpx;
+}

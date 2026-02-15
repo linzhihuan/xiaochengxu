@@ -1,39 +1,39 @@
-<view class="container safe-nav-space safe-bottom">
-  <view class="shop-header fade-in-up">
-    <text class="shop-title font-serif">Life Lab.</text>
-    <text class="shop-desc">Extend your moments into reality.</text>
+<view class="container safe-bottom">
+  <!-- 1. 顶部固定标题区 -->
+  <view class="nav-header" style="padding-top:{{statusBarHeight}}px">
+    <text class="nav-title font-serif">Life LAB.</text>
+    <text class="nav-subtitle">生活实验室 · Extend your moments.</text>
   </view>
 
-  <view class="shop-grid">
-    <view class="shop-item fade-in-up delay-1" bindtap="consult" data-item="Fridge Magnet">
-      <view class="shop-img-box">
-        <image src="https://images.unsplash.com/photo-1583875323984-63df774d0810?w=400" mode="aspectFit" class="shop-img rotate-right"></image>
-      </view>
-      <view class="shop-txt">
-        <text class="p-name">Acrylic Magnet</text>
-        <text class="p-sub">Daily Fragments</text>
-      </view>
-    </view>
-
-    <view class="shop-item fade-in-up delay-1" bindtap="consult" data-item="Stickers">
-      <view class="shop-img-box">
-        <image src="https://images.unsplash.com/photo-1616423668352-731307b22d19?w=400" mode="aspectFit" class="shop-img rotate-left"></image>
-      </view>
-      <view class="shop-txt">
-        <text class="p-name">Waterproof Sticker</text>
-        <text class="p-sub">For Kids</text>
-      </view>
-    </view>
-
-    <view class="shop-item wide fade-in-up delay-2" bindtap="consult" data-item="Fine Art Frame">
-      <view class="shop-content-row">
-        <view>
-          <text class="p-name big">Fine Art Frame</text>
-          <text class="p-sub">Hahnemühle Paper</text>
-          <view class="tag">CUSTOMIZE</view>
+  <!-- 2. 滚动产品列表 -->
+  <scroll-view scroll-y class="shop-scroll">
+    <view class="product-grid">
+      
+      <!-- 遍历产品列表 -->
+      <view class="product-card fade-in-up" 
+            wx:for="{{products}}" wx:key="id" 
+            style="animation-delay: {{index * 0.1}}s"
+            bindtap="goCustomize" 
+            data-id="{{item.id}}">
+        
+        <view class="card-img-box">
+          <image src="{{item.cover}}" mode="aspectFit" class="card-img"></image>
+          <view class="badge" wx:if="{{item.tag}}">{{item.tag}}</view>
         </view>
-        <image src="https://images.unsplash.com/photo-1534349762913-96e08227f2c0?w=400" mode="aspectFit" class="shop-img-big"></image>
+        
+        <view class="card-info">
+          <text class="p-name">{{item.name}}</text>
+          <text class="p-desc">{{item.desc}}</text>
+          <view class="p-bottom">
+            <text class="p-price">¥{{item.price}}</text>
+            <view class="btn-arrow">→</view>
+          </view>
+        </view>
+
       </view>
+
     </view>
-  </view>
+    <!-- 底部占位 -->
+    <view style="height: 40rpx;"></view>
+  </scroll-view>
 </view>

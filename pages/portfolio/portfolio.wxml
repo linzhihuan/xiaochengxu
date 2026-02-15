@@ -6,9 +6,10 @@
     </view>
     <scroll-view scroll-x class="tab-scroll" show-scrollbar="{{false}}">
       <view class="tab-item {{activeTab==='all'?'active':''}}" bindtap="switchTab" data-type="all">All</view>
-      <view class="tab-item {{activeTab==='portrait'?'active':''}}" bindtap="switchTab" data-type="portrait">Portrait</view>
-      <view class="tab-item {{activeTab==='commercial'?'active':''}}" bindtap="switchTab" data-type="commercial">Editorial</view>
-      <view class="tab-item {{activeTab==='memory'?'active':''}}" bindtap="switchTab" data-type="memory">Life</view>
+      <view class="tab-item {{activeTab==='wedding'?'active':''}}" bindtap="switchTab" data-type="wedding">婚礼</view>
+      <view class="tab-item {{activeTab==='emotion'?'active':''}}" bindtap="switchTab" data-type="emotion">情绪</view>
+      <view class="tab-item {{activeTab==='commercial'?'active':''}}" bindtap="switchTab" data-type="commercial">儿童</view>
+      <view class="tab-item {{activeTab==='pet'?'active':''}}" bindtap="switchTab" data-type="pet">宠物</view>
     </scroll-view>
   </view>
 

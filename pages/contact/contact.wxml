@@ -1,32 +1,45 @@
 <view class="container safe-nav-space min-h-screen">
   <view class="fade-in-up">
-    <text class="text-xl font-serif">Let's Talk.</text>
-    <text class="text-sub text-sm block mt-2">Tell us your story.</text>
+    <text class="text-xl font-serif">Tell us your story.</text>
+    <text class="text-sub text-sm block mt-2" decode="{{true}}">&nbsp;&nbsp;联系我们</text>
   </view>
 
-  <form bindsubmit="submit" class="form-area fade-in-up delay-1">
+  <form ref="submitFormRef" bindsubmit="submit" class="form-area fade-in-up delay-1">
     <view class="input-group">
-      <text class="label">NAME</text>
-      <input class="input-line" name="name" placeholder="Your Name" placeholder-class="ph-style"/>
+      <text class="label" style='color:rgba(0, 0, 0, 0.8);'>姓名</text>
+      <input class="input-line" name="userName" value="{{userName}}" placeholder="Your Name" placeholder-class="ph-style"/>
     </view>
     <view class="input-group">
-      <text class="label">PHONE</text>
-      <input class="input-line" name="phone" type="number" placeholder="Mobile Number" placeholder-class="ph-style"/>
+      <text class="label" style='color: rgba(0, 0, 0, 0.8);'>电话</text>
+      <input class="input-line" name="userPhone" value='{{userPhone}}' type="number" placeholder="Mobile Number" placeholder-class="ph-style"/>
     </view>
     <view class="input-group">
-      <text class="label">INTEREST</text>
+      <text class="label" style='color: rgba(0, 0, 0, 0.8);'>感兴趣的场景</text>
       <picker bindchange="pick" value="{{idx}}" range="{{types}}">
         <view class="input-line picker-view">
           <text class="{{idx!=-1?'text-main':'text-sub'}}">{{idx!=-1?types[idx]:'Select Type'}}</text>
-          <text class="text-xs">▼</text>
+          <text class="text-xs" decode="{{true}}"> &nbsp;▼</text>
         </view>
       </picker>
     </view>
-    
-    <button form-type="submit" class="btn-primary" style="width:100%">SUBMIT REQUEST</button>
+    <view class="input-group">
+      <text class="label" style='color: rgba(0, 0, 0, 0.8);margin-bottom: 20rpx;'>备注</text>
+      <textarea class="input-line"
+    value="{{noteContent}}"
+    width='100%'
+    auto-height="{{true}}"
+    maxlength="500"         
+    bindinput="handleTextAreaInput"
+    bindblur="handleTextAreaBlur"
+    style="width:100%; min-height: 120rpx; max-height: 220rpx;border: 1rpx solid #eee; border-radius: 8rpx;"
+  />
+  <!-- 实时字数统计 -->
+  <view class="count">{{noteContent.length}}/500</view>
+    </view>
+    <button form-type="submit" class="btn-primary" style="width:100%">提交</button>
   </form>
 
   <view class="footer-chat fade-in-up delay-2">
-    <button open-type="contact" class="btn-chat">Or chat via WeChat</button>
+    <button open-type="contact" class="btn-chat" style='color:cornflowerblue'>🎧 联系人工客服</button>
   </view>
 </view>
