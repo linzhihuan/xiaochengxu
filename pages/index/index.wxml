@@ -1,39 +1,50 @@
 <view class="hero-container">
-  <image 
-    src="https://2026-1312809563.cos.ap-shanghai.myqcloud.com/home/moon.jpg" 
-    mode="aspectFill" 
-    class="hero-bg fade-in-up"
-  ></image>
+  <!-- 替换 Canvas 为原生 Swiper 组件，实现高性能图片轮播 -->
+  <swiper 
+    class="hero-swiper"
+    circular 
+    autoplay 
+    interval="{{swiperInterval}}" 
+    duration="{{swiperDuration}}"
+  >
+    <block wx:for="{{images}}" wx:key="index">
+      <swiper-item>
+        <image 
+          src="{{item}}" 
+          mode="aspectFill" 
+          class="hero-img zoom-animation"
+        ></image>
+      </swiper-item>
+    </block>
+  </swiper>
   
+  <!-- 渐变遮罩层：增强文案可读性 -->
   <view class="hero-overlay"></view>
 
-  <view class="top-bar fade-in-up">
-    <text class="logo" style="color: rgb(188, 188, 188);">ITM.</text>
+  <!-- 顶部状态栏 -->
+  <view class="top-bar">
+    <text class="logo">ITM.</text>
     <text class="year">EST. 2026</text>
   </view>
 
+  <!-- 内容区 -->
   <view class="content-box">
     <view class="text-group">
-      <view class="text-xxl fade-in-up delay-1" style="color:rgb(0, 0, 0)">Capturing</view>
-      <view class="text-xxl font-serif fade-in-up delay-1" style="margin-top: -10rpx;">The Soul.</view>
-      <view class="divider fade-in-up delay-2"></view>
-      <text class="desc fade-in-up delay-2">In The Moment 拒绝流水线式的记录。\n我们是光影的捕手，为你定格不可复制的瞬间。</text>
+      <view class="text-xl">Capturing</view>
+      <view class="text-xl font-serif">The Soul.</view>
+      <view class="divider"></view>
+      <text class="desc">In The Moment 拒绝流水线式的作业。\n我们是光影的捕手，为你定格不可复制的瞬间。</text>
     </view>
     
-    <view class="btn-group fade-in-up delay-3">
+    <view class="btn-group">
       <view class="btn-primary btn-expand" bindtap="goToPortfolio">EXPLORE · 探索</view>
       <view class="btn-ghost btn-icon" bindtap="goToContact">→</view>
     </view>
-    <view class="icp-area fade-in-up delay-3">
+
+    <view class="icp-area">
       <text class="icp-text">Copyright © 2026 IN THE MOMENT Studio.</text>
-      <text class="icp-text">
-        <!-- <a href="https://beian.miit.gov.cn/" target="_blank"></a> -->
-        粤ICP备2026014773号-2X
-      </text>
+      <text class="icp-text">粤ICP备2026014773号-2X</text>
     </view>
   </view>
-  
 </view>
-
-
 

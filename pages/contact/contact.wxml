@@ -1,6 +1,6 @@
 <view class="container safe-nav-space min-h-screen">
   <view class="fade-in-up">
-    <text class="text-xl font-serif">Tell us your story.</text>
+    <text class="text-xl font-serif" style="font-size: 60rpx;">Tell us your story.</text>
     <text class="text-sub text-sm block mt-2" decode="{{true}}">&nbsp;&nbsp;联系我们</text>
   </view>
 
@@ -40,6 +40,6 @@
   </form>
 
   <view class="footer-chat fade-in-up delay-2">
-    <button open-type="contact" class="btn-chat" style='color:cornflowerblue'>🎧 联系人工客服</button>
+    <button open-type="contact" class="btn-chat" style='color:cornflowerblue'>联系人工客服</button>
   </view>
 </view>

@@ -34,7 +34,7 @@ const request = (options) => {
             try {
               // 引用 App.js 中的 login 方法 (需确保 App.js 已加载)
               const newApp = getApp(); 
-              await newApp.doLogin(); // 重新获取 Token
+              await newApp.doRegist(); // 重新获取 Token doRegist逻辑更单纯
               
               // 2. 登录成功，重试队列中的请求
               isRefreshing = false;

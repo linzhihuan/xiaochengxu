@@ -1,4 +1,5 @@
 {
-  "usingComponents": {
-  }
+  "usingComponents": {},
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom"
 }

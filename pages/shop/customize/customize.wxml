@@ -1,4 +1,4 @@
-<view class="container safe-bottom">
+<view class="container">
   
   <!-- 1. 顶部导航 -->
   <view class="nav-bar" style="padding-top:{{statusBarHeight}}px">
@@ -7,38 +7,59 @@
     <view class="nav-spacer"></view>
   </view>
 
+  <!-- 2. 主滚动区 -->
   <scroll-view scroll-y class="main-scroll" enable-flex>
     
-    <!-- 2. 预览舞台 (动态合成) -->
+    <!-- 预览舞台：核心交互区 -->
     <view class="preview-stage">
-      <view class="canvas-box shadow-lg">
-        <!-- 模拟遮罩：相框/形状 (层级高) -->
-        <!-- 注意：实际开发需用透明PNG，中间镂空 -->
+      <!-- 
+        mask-container 负责剪裁 (overflow: hidden)
+        events 绑定在此处，让用户感觉是在操作这个框
+      -->
+      <view class="canvas-box shadow-lg"
+            bindtouchstart="touchStart"
+            bindtouchmove="touchMove"
+            bindtouchend="touchEnd">
+            
+        <!-- A. 底层：背景色/默认纹理 -->
+        <view class="bg-layer"></view>
+
+        <!-- B. 动层：用户照片 (应用 transform) -->
+        <!-- 注意：catchtouchmove 防止拖动图片时整个页面跟着滚动 -->
+        <image class="photo-layer" 
+               src="{{selectedPhoto}}" 
+               mode="aspectFill" 
+               style="{{imgStyle}}"></image>
+        
+        <!-- C. 顶层：产品遮罩 (静止, pointer-events-none) -->
+        <!-- 实际开发中，mask图片中间应该是透明的 PNG -->
         <image class="mask-layer" src="{{activeTemplate.mask}}" mode="aspectFit"></image>
         
-        <!-- 用户照片 (层级低) -->
-        <image class="photo-layer" src="{{selectedPhoto}}" mode="aspectFill"></image>
-        
-        <!-- 空状态引导 -->
+        <!-- D. 引导层：空状态 -->
         <view class="empty-guide" wx:if="{{!selectedPhoto}}">
           <text class="plus">+</text>
-          <text class="tip">Select Photo</text>
+          <text class="tip">Select Photo Below</text>
+        </view>
+        
+        <!-- E. 交互提示层：有图时显示操作指引 -->
+        <view class="gesture-hint" wx:if="{{selectedPhoto && touch.scale === 1}}">
+          <text>Pinch to Zoom / Drag to Move</text>
         </view>
       </view>
-      <text class="preview-caption">{{activeTemplate.name}} - ¥{{totalPrice}}</text>
+
+      <text class="preview-caption">{{productInfo.name}} - {{activeTemplate.name}}</text>
     </view>
 
-    <!-- 3. 配置面板 -->
+    <!-- 配置面板 -->
     <view class="config-panel">
       
-      <!-- Section A: 选照片 -->
+      <!-- 01 Photo -->
       <view class="config-section">
         <view class="section-title">
           <text>01. Photo</text>
-          <text class="subtitle">From your favorites</text>
+          <text class="subtitle">From favorites</text>
         </view>
         <scroll-view scroll-x class="picker-scroll" enable-flex>
-          <!-- 空状态/去登录 -->
           <view class="picker-item empty" wx:if="{{myFavorites.length === 0}}" bindtap="handleNoFav">
             <text>{{isLogin ? 'Go Gallery' : 'Login'}}</text>
           </view>
@@ -52,24 +73,25 @@
         </scroll-view>
       </view>
 
-      <!-- Section B: 选模板 (Visual Style) -->
+      <!-- 02 Style (Template) -->
       <view class="config-section">
         <view class="section-title">
           <text>02. Style</text>
-          <text class="subtitle">{{productInfo.name}} variants</text>
         </view>
         <scroll-view scroll-x class="picker-scroll" enable-flex>
           <view class="style-card {{index === activeTemplateIndex ? 'active' : ''}}"
                 wx:for="{{productInfo.templates}}" wx:key="id"
                 bindtap="handleSelectTemplate" data-index="{{index}}">
-            <image src="{{item.img}}" mode="aspectFit" class="style-thumb"></image>
+            <view class="style-preview">
+              <!-- 这里可以用小图标或者简单的色块代表样式 -->
+              <view class="mini-mask"></view>
+            </view>
             <text class="style-name">{{item.name}}</text>
-            <view class="active-dot" wx:if="{{index === activeTemplateIndex}}"></view>
           </view>
         </scroll-view>
       </view>
 
-      <!-- Section C: 动态渲染规格选项 (Size, Material, etc.) -->
+      <!-- 03 Options (Dynamic) -->
       <block wx:for="{{productInfo.options}}" wx:key="id" wx:for-item="option">
         <view class="config-section">
           <view class="section-title">
@@ -82,22 +104,21 @@
                   data-opt-id="{{option.id}}" 
                   data-choice-id="{{choice.id}}">
               <text>{{choice.name}}</text>
-              <!-- 显示加价信息 -->
-              <text class="price-mod" wx:if="{{choice.priceMod > 0}}">+¥{{choice.priceMod}}</text>
+              <text class="price-mod" wx:if="{{choice.priceMod > 0}}">+{{choice.priceMod}}</text>
             </view>
           </view>
         </view>
       </block>
       
-      <!-- 底部垫高 -->
-      <view style="height: 180rpx;"></view>
+      <!-- 核心修复：底部占位符，高度 = Footer高度 + 安全区 + 额外缓冲 -->
+      <view class="safe-scroll-padding"></view>
     </view>
   </scroll-view>
 
-  <!-- 4. 底部浮动栏 -->
+  <!-- 3. 底部操作栏 -->
   <view class="footer-bar">
     <view class="price-block">
-      <text class="label">Total Amount</text>
+      <text class="label">Total</text>
       <text class="val">¥{{totalPrice}}</text>
     </view>
     <button class="add-btn" bindtap="handleCheckout">Add to Cart</button>

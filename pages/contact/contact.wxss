@@ -9,4 +9,5 @@
 .btn-chat { background: transparent; font-size: 24rpx; color: #999; border: none; }
 .btn-chat::after { border: none; }
 .count {color: #999;}
+/* .ext-xl {padding-top: 100rpx;} */
 

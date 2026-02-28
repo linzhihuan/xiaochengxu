@@ -4,12 +4,10 @@ Page({
   data: {
     statusBarHeight: wx.getSystemInfoSync().statusBarHeight,
     products: [
-      { id: 1, name: 'Acrylic Magnet', desc: 'Capture daily fragments.', price: 49, cover: 'https://images.unsplash.com/photo-1583875323984-63df774d0810?w=300', tag: 'HOT' },
-      { id: 2, name: 'Waterproof Sticker', desc: 'Personalized for kids.', price: 29, cover: 'https://images.unsplash.com/photo-1616423668352-731307b22d19?w=300' },
-      { id: 3, name: 'Oak Wood Frame', desc: 'Minimalist solid wood.', price: 299, cover: 'https://images.unsplash.com/photo-1534349762913-96e08227f2c0?w=300' },
-      { id: 4, name: 'Metal Art Print', desc: 'Modern industrial style.', price: 399, cover: 'https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=300' },
-      { id: 5, name: 'Metal Art Print', desc: 'Modern industrial style.', price: 399, cover: 'https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=300' },
-      { id: 6, name: 'Metal Art Print', desc: 'Modern industrial style.', price: 399, cover: 'https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=300' }
+      { id: 1, name: '实体相框', desc: 'Capture daily fragments.', price: ' contact us', cover: 'https://2026-1312809563.cos.ap-shanghai.myqcloud.com/lab/xk.png', tag: 'HOT' },
+      { id: 2, name: '影集', desc: 'Personalized for kids.', price: ' contact us', cover: 'https://2026-1312809563.cos.ap-shanghai.myqcloud.com/lab/yj.png' },
+      { id: 3, name: '日历', desc: 'Personalized for kids.', price: ' contact us', cover: 'https://2026-1312809563.cos.ap-shanghai.myqcloud.com/lab/rl.png' },
+      { id: 4, name: '冰箱贴', desc: 'Personalized for kids.', price: ' contact us', cover: 'https://2026-1312809563.cos.ap-shanghai.myqcloud.com/lab/bxt.png' },
     ]
   },
 
